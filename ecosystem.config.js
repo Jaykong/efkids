@@ -25,7 +25,7 @@ module.exports = {
       ref: "origin/master",
       repo: "git@github.com:Jaykong/efkids.git",
       path: "/home/ubuntu/efkids",
-      "post-deploy": "npm install && pm2 startOrRestart ecosystem.config.js"
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
 };
