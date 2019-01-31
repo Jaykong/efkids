@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: 'efkids',
-    script: 'app.js',
+    script: './src/index.js',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     args: 'one two',
