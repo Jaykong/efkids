@@ -12,8 +12,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.App-bg {
+  height: 150vmin;
+}
+.App-btn {
+  height: 20vmin;
+}
 .App-link {
   color: #61dafb;
+}
+
+.container {
+  /*background-image: url("./images/selectCountryBg.png");*/
+  display: flex;
+  flex-direction:column;
+  align-items:center;
 }
 

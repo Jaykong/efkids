@@ -3,6 +3,7 @@ import './App.css';
 import enterBtn from './images/enterBtn.png'
 import startBg from './images/startBg.png'
 
+
 class App extends Component {
   render() {
     return (
@@ -10,6 +11,8 @@ class App extends Component {
         <header className="App-header">
           <img src={startBg} className="App-logo" alt="logo" />
             <img src={enterBtn} className="App-logo" alt="logo" />
+
+
 
         </header>
       </div>

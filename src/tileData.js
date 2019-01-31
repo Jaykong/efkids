@@ -1,4 +1,4 @@
-import image from './images/countryBtn.png'
+import image from '../../../../../WebstormProjects/untitled3/src/images/countryBtn.png'
 
 const titeData = [
     {
