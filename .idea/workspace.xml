@@ -52,9 +52,13 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="uploadBg.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/images/uploadBg.png">
-          <provider selected="true" editor-type-id="images" />
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11">
+              <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="startBg.png" pinned="false" current-in-tab="false">
@@ -82,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ecosystem.config.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ecosystem.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecosystem.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="22" column="59" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="59" />
+            <state relative-caret-position="71">
+              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -130,8 +134,8 @@
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/ecosystem.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/ecosystem.config.js" />
       </list>
     </option>
   </component>
@@ -146,11 +150,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="109" />
-    <option name="y" value="61" />
-    <option name="width" value="1024" />
-    <option name="height" value="617" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="148" />
+    <option name="y" value="23" />
+    <option name="width" value="1600" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -256,7 +260,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22146000" />
+    <option name="totallyTimeSpent" value="22624000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,7 +272,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1600" height="877" extended-state="6" />
+    <frame x="148" y="23" width="1600" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4966975" visible="true" weight="0.2533249" />
@@ -515,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -602,8 +599,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecosystem.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="59" />
+        <state relative-caret-position="71">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
         </state>
       </provider>
     </entry>
