@@ -23,7 +23,7 @@ module.exports = {
     production: {
       user: "ubuntu",
       host: "ec2-3-17-39-61.us-east-2.compute.amazonaws.com",
-      key: "~/.ssh/home.pem",
+      key: "~/.ssh/efkids.pem",
       ref: "origin/master",
       repo: "git@github.com:Jaykong/efkids.git",
       path: "/home/ubuntu/efkids",
