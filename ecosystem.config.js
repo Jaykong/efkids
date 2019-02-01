@@ -22,8 +22,8 @@ module.exports = {
  deploy: {
     production: {
       user: "ubuntu",
-      host: "ec2-18-223-205-2.us-east-2.compute.amazonaws.com",
-      key: "~/.ssh/efkids.pem",
+      host: "ec2-3-17-39-61.us-east-2.compute.amazonaws.com",
+      key: "~/.ssh/home.pem",
       ref: "origin/master",
       repo: "git@github.com:Jaykong/efkids.git",
       path: "/home/ubuntu/efkids",
