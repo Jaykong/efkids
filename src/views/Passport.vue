@@ -4,13 +4,13 @@
     <div class="container-passport" id="capture">
       <van-row class="cell-passport" type="flex" justify="center">
         <van-col>
-          <img src="../assets/images/passport_grid_bg.png">
+          <img src="../assets/images/passport_grid_bg.png" />
         </van-col>
       </van-row>
 
       <van-row class="cell-badge">
         <van-col class="badges">
-          <badge-load/>
+          <badge-load />
         </van-col>
         <van-col class="photo-text">
           <van-row type="flex" justify="center">
@@ -18,7 +18,7 @@
               <van-row type="flex" justify="center">
                 <van-col>
                   <div class="photo">
-                    <img :src="photo">
+                    <img :src="photo" />
                   </div>
                   <div :class="'name ' + color">{{ name }}</div>
                 </van-col>
@@ -33,8 +33,12 @@
                     <span :class="'name ' + color">{{ name }}</span> 宝贝
                   </div>
                   <div>
-                    走过<span :class="'large ' + color">{{ continent_count }}</span>个大洲
-                    <span :class="'large ' + color">{{ country_count }}</span>个国家
+                    走过<span :class="'large ' + color">{{
+                      continent_count
+                    }}</span
+                    >个大洲
+                    <span :class="'large ' + color">{{ country_count }}</span
+                    >个国家
                   </div>
                   <div>
                     领先全国
@@ -50,9 +54,9 @@
 
               <van-row type="flex">
                 <van-col class="slogan">
-                  <div>新的一年，
-                    <br>让英孚全球近百条游学线路
-                    <br>陪你去看更大的世界！
+                  <div>
+                    新的一年， <br />让英孚全球近百条游学线路
+                    <br />陪你去看更大的世界！
                   </div>
                 </van-col>
               </van-row>
@@ -65,13 +69,10 @@
         <van-col>
           <van-row type="flex" justify="center">
             <van-col class="qrcode">
-              <img src="../assets/images/qrcode.png">
+              <img src="../assets/images/qrcode.png" />
             </van-col>
             <van-col class="text">
-              <p>扫码制作
-                <br>宝贝专属护照
-                <br>回顾世界足迹
-              </p>
+              <p>扫码制作 <br />宝贝专属护照 <br />回顾世界足迹</p>
             </van-col>
           </van-row>
         </van-col>
@@ -85,7 +86,7 @@
     <van-row class="container-start" type="flex" justify="end">
       <van-col>
         <a href="https://jinshuju.net/f/9ZFULV">
-          <img class="start-btn" src="../assets/images/statNewTripBtn.png">
+          <img class="start-btn" src="../assets/images/statNewTripBtn.png" />
         </a>
       </van-col>
     </van-row>
@@ -221,7 +222,7 @@ export default {
     };
 
     setTimeout(() => {
-      // convert2canvas("#capture");
+      convert2canvas("#capture");
     }, 200);
   }
 };
