@@ -94,7 +94,7 @@ export default {
     overflow-y: scroll;
 
     .item {
-      width: 80px;
+      width: 88px;
       margin: 4px;
     }
   }
@@ -103,7 +103,7 @@ export default {
     margin-top: 5vh;
 
     .country-btn {
-      width: 140px;
+      width: 128px;
     }
   }
 }

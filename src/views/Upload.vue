@@ -110,7 +110,7 @@ export default {
     margin-top: 5vh;
 
     .select-text {
-      width: 200px;
+      width: 180px;
     }
   }
 
@@ -138,7 +138,7 @@ export default {
     margin-top: 5vh;
 
     .select-text {
-      width: 115px;
+      width: 112px;
     }
   }
 
@@ -146,7 +146,7 @@ export default {
     margin-top: 2vh;
 
     .input {
-      width: 60vw;
+      width: 240px;
     }
   }
 
@@ -154,7 +154,7 @@ export default {
     margin-top: 10vh;
 
     .upload-btn {
-      width: 200px;
+      width: 180px;
     }
   }
 }
