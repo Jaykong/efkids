@@ -78,7 +78,7 @@ export default {
   background-size: cover;
 
   .cell-text {
-    margin-top: 5vh;
+    margin-top: 60px;
 
     .select-text {
       width: 120px;
