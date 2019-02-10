@@ -6,7 +6,7 @@
       :style="
         'position:absolute;top:' +
           Math.random() * 10 * 2.4 +
-          'vh;left:' +
+          'vw;left:' +
           (Math.random() * 10 + 1) * 5.6 +
           'vw'
       "
@@ -261,8 +261,8 @@ export default {
 
 <style lang="less" scoped>
 .badges {
-  width: 90vw;
-  height: 35vh;
+  width: 100%;
+  height: 100%;
   position: relative;
 
   .badge {
