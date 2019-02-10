@@ -244,7 +244,7 @@ export default {
 
     .cell-passport {
       position: absolute;
-      top: 5vh;
+      top: 4vw;
       left: 5vw;
       z-index: 10;
 
@@ -257,7 +257,7 @@ export default {
 
     .cell-badge {
       position: absolute;
-      top: 5vh;
+      top: 4vw;
       left: 5vw;
       z-index: 11;
 
@@ -418,7 +418,7 @@ export default {
   .container-save {
     width: 100vw;
     position: absolute;
-    top: 82vh;
+    top: 83vh;
     z-index: 999;
 
     .text {

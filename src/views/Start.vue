@@ -24,7 +24,7 @@
   background-size: cover;
 
   .cell-logo {
-    margin-top: 36px;
+    margin-top: 24px;
     margin-left: 36px;
 
     .logo {
@@ -33,7 +33,7 @@
   }
 
   .cell-btn {
-    margin-top: 66vh;
+    margin-top: 68vh;
     .enter-btn {
       width: 128px;
     }
