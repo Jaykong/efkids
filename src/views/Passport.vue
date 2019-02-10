@@ -33,9 +33,9 @@
                     <span :class="'name ' + color">{{ name }}</span> 宝贝
                   </div>
                   <div>
-                    走过<span :class="'large ' + color">{{
-                      continent_count
-                    }}</span
+                    走过
+                    <span :class="'large ' + color">
+                      {{ continent_count }} </span
                     >个大洲
                     <span :class="'large ' + color">{{ country_count }}</span
                     >个国家
@@ -65,16 +65,12 @@
         </van-col>
       </van-row>
 
-      <van-row class="cell-qrcode" type="flex" align="center">
-        <van-col>
-          <van-row type="flex" justify="center">
-            <van-col class="qrcode">
-              <img src="../assets/images/qrcode.png" />
-            </van-col>
-            <van-col class="text">
-              <p>扫码制作 <br />宝贝专属护照 <br />回顾世界足迹</p>
-            </van-col>
-          </van-row>
+      <van-row class="cell-qrcode">
+        <van-col class="qrcode">
+          <img src="../assets/images/qrcode.png" />
+        </van-col>
+        <van-col class="text"
+          >扫码制作 <br />宝贝专属护照 <br />回顾世界足迹
         </van-col>
       </van-row>
     </div>
@@ -331,22 +327,27 @@ export default {
       position: absolute;
       top: 86vh;
       left: 4vw;
+      z-index: 11;
+
+      width: 50vw;
 
       .qrcode {
         width: 72px;
         height: 72px;
 
         img {
-          width: 72px;
-          height: 72px;
+          width: 100%;
+          height: 100%;
         }
       }
 
       .text {
-        width: 72px;
         font-size: 12px;
         color: #fff;
-        margin-left: 8px;
+
+        position: absolute;
+        bottom: 0;
+        left: 80px;
       }
     }
   }
