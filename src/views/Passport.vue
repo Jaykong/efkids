@@ -139,12 +139,12 @@ export default {
     );
     this.exceed = 80 + num;
 
-    if (this.continent_count === 0) {
+    if (len === 0) {
       this.title = "东方文明小使者";
       this.color = "messenger";
       this.bg = "messenger-bg";
       this.exceed = 80 + num;
-    } else if (this.country_count >= 3) {
+    } else if (len >= 2) {
       this.title = "小小环球旅行家";
       this.color = "traveller";
       this.bg = "traveller-bg";
@@ -174,9 +174,9 @@ export default {
       this.bg = "recorder-bg";
       this.exceed = 85 + num;
     } else if (
-      continent.includes("南美洲") ||
-      continent.includes("南极洲") ||
-      continent.includes("非洲")
+      (len === 1 && continent.includes("南美洲")) ||
+      (len === 1 && continent.includes("南极洲")) ||
+      (len === 1 && continent.includes("非洲"))
     ) {
       this.title = "勇气满满探险家";
       this.color = "explorer";
