@@ -1,19 +1,93 @@
 <template>
-  <div class="badges">
-    <div
+  <div class="container-badges">
+    <!-- <div
       v-for="item in badges"
       :key="item"
-      :style="
-        'position:absolute;top:' +
-          Math.random() * 10 * 2.4 +
-          'vw;left:' +
-          (Math.random() * 10 + 1) * 5.6 +
-          'vw'
-      "
-      class="badge"
+      class="badge badge-1"
     >
-      <!-- <img :src="'../assets/badges/'+item+'.png'"> -->
       <img :src="item" />
+    </div> -->
+
+    <div class="badge badge-0">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-1">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-2">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-3">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-4">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-5">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-6">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-7">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-8">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-9">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-10">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-11">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-12">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-13">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-14">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-15">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-16">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-17">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-18">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-19">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-20">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-21">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-22">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-23">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-24">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-25">
+      <img src="../assets/badges/AFRICA.png" />
+    </div>
+    <div class="badge badge-26">
+      <img src="../assets/badges/AFRICA.png" />
     </div>
   </div>
 </template>
@@ -60,7 +134,7 @@ export default {
       continent: state => state.continent
     })
   },
-  mounted() {
+  created() {
     const continent = this.continent;
     const country = this.current_country;
 
@@ -260,19 +334,24 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.badges {
+.container-badges {
   width: 100%;
-  height: 100%;
+  height: 240px;
   position: relative;
 
   .badge {
     width: 114px;
-    // position: absolute;
+    position: absolute;
 
     img {
       width: 114px;
       height: 100px;
     }
+  }
+
+  .badge-0 {
+    top: 50px;
+    left: 15vw;
   }
 }
 </style>
