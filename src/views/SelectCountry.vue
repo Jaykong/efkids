@@ -45,6 +45,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { Toast } from "vant";
 
 export default {
   data() {
@@ -64,7 +65,14 @@ export default {
       this.$store.commit("onSelectCountry", item);
     },
     onSubmit() {
-      this.$router.push("/upload");
+      if (this.current_country.length === 0) {
+        Toast.fail({
+          message: "您还没有选择足迹",
+          duration: 1500
+        });
+      } else {
+        this.$router.push("/upload");
+      }
     }
   }
 };
