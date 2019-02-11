@@ -324,7 +324,7 @@ export default {
 
     .cell-qrcode {
       position: absolute;
-      top: 520px;
+      top: 504px;
       left: 6vw;
       z-index: 11;
 
@@ -417,7 +417,7 @@ export default {
   .container-save {
     width: 100vw;
     position: absolute;
-    top: 500px;
+    top: 484px;
     z-index: 999;
 
     .text {
@@ -429,7 +429,7 @@ export default {
   .container-start {
     width: 40vw;
     position: absolute;
-    top: 530px;
+    top: 516px;
     right: 6vw;
     z-index: 999;
     .start-btn {
