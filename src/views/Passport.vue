@@ -34,8 +34,7 @@
                   </div>
                   <div>
                     走过
-                    <span :class="'large ' + color">
-                      {{ continent_count }} </span
+                    <span :class="'large ' + color">{{ continent_count }}</span
                     >个大洲
                     <span :class="'large ' + color">{{ country_count }}</span
                     >个国家
@@ -109,22 +108,21 @@ export default {
       name: state => state.name,
       photo: state => state.photo,
       country_count: state => state.country_count,
-      current_continent: state => state.current_continent
+      current_continent: state => state.current_continent,
+      current_country: state => state.current_country
     })
   },
   components: {
     BadgeLoad
   },
   created() {
-    const index_asia = this.current_continent.indexOf("亚洲");
-    if (index_asia !== -1) {
-      console.log(this.current_continent.length);
+    if (this.current_country.includes("中国")) {
+      const index_asia = this.current_continent.indexOf("亚洲");
       this.current_continent.splice(index_asia, 1);
     }
 
     const continent = [...new Set(this.current_continent)];
     this.continent_count = continent.length;
-    console.log(continent.length);
 
     // console.log(continent);
 
