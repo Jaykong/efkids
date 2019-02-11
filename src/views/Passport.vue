@@ -217,7 +217,7 @@ export default {
     };
 
     setTimeout(() => {
-      // convert2canvas("#capture");
+      convert2canvas("#capture");
     }, 200);
   }
 };
