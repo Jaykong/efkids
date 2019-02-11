@@ -116,14 +116,14 @@ export default {
     BadgeLoad
   },
   created() {
-    const continent = [...new Set(this.current_continent)];
-
-    this.continent_count = continent.length;
-
     const index_asia = continent.indexOf("亚洲");
     if (index_asia !== -1) {
       continent.splice(index_asia, 1);
     }
+
+    const continent = [...new Set(this.current_continent)];
+
+    this.continent_count = continent.length;
 
     // console.log(continent);
 
