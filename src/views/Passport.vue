@@ -54,7 +54,7 @@
               <van-row type="flex">
                 <van-col class="slogan">
                   <div>
-                    新的一年， <br />让英孚全球近百条游学线路
+                    新的一年，让英孚全球近百条游学线路
                     <br />陪你去看更大的世界！
                   </div>
                 </van-col>
@@ -243,7 +243,7 @@ export default {
 
     .cell-passport {
       position: absolute;
-      top: 5vw;
+      top: 4vw;
       left: 7vw;
       z-index: 10;
 
@@ -256,7 +256,7 @@ export default {
 
     .cell-badge {
       position: absolute;
-      top: 5vw;
+      top: 4vw;
       left: 7vw;
       z-index: 11;
 
@@ -270,12 +270,12 @@ export default {
       }
 
       .photo-text {
-        margin-top: 2vw;
+        margin-top: 3vw;
         width: 100%;
 
         .photo {
-          width: 105px;
-          height: 150px;
+          width: 90px;
+          height: 133px;
           overflow: hidden;
           margin-right: 8px;
 
@@ -285,7 +285,7 @@ export default {
         }
 
         .name {
-          width: 105px;
+          width: 90px;
           margin-top: 4px;
           text-align: center;
           font-weight: 600;
@@ -294,14 +294,15 @@ export default {
         .text {
           color: rgb(30, 52, 151);
           font-size: 14px;
+          line-height: 20px;
 
           .name {
             font-weight: 600;
           }
 
           .large {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
           }
 
           .title {
@@ -324,7 +325,7 @@ export default {
 
     .cell-qrcode {
       position: absolute;
-      top: 504px;
+      top: 500px;
       left: 6vw;
       z-index: 11;
 
@@ -417,7 +418,7 @@ export default {
   .container-save {
     width: 100vw;
     position: absolute;
-    top: 484px;
+    top: 480px;
     z-index: 999;
 
     .text {
@@ -429,7 +430,7 @@ export default {
   .container-start {
     width: 40vw;
     position: absolute;
-    top: 516px;
+    top: 510px;
     right: 6vw;
     z-index: 999;
     .start-btn {
