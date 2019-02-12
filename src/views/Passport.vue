@@ -235,7 +235,6 @@ export default {
         imgUrl: "", // 分享图标
         success: function() {
           // 设置成功
-          alert("ok1");
         }
       });
       wx.updateTimelineShareData({
@@ -244,7 +243,6 @@ export default {
         imgUrl: "", // 分享图标
         success: function() {
           // 设置成功
-          alert("ok2");
         }
       });
     });
