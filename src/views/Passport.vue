@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="container-canvas" ref="canvas2img"></div>
+    <!-- <div class="container-canvas" ref="canvas2img"></div> -->
     <div class="container-passport" id="capture">
       <van-row class="cell-passport" type="flex" justify="center">
         <van-col>
@@ -215,7 +215,7 @@ export default {
     };
 
     setTimeout(() => {
-      convert2canvas("#capture");
+      // convert2canvas("#capture");
     }, 200);
 
     wx.config({
@@ -232,7 +232,7 @@ export default {
         title: "宝贝足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
         link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: ef_logo, // 分享图标
+        imgUrl: "", // 分享图标
         success: function() {
           // 设置成功
           alert("ok1");
