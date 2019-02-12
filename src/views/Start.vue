@@ -27,11 +27,21 @@ export default {
       timestamp: 1414587457, // 必填，生成签名的时间戳
       nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
       signature: "3f47597dff643a30d3e5cc8d13355ac11d2036b2", // 必填，签名
-      jsApiList: ["updateAppMessageShareData", "updateTimelineShareData"] // 必填，需要使用的JS接口列表
+      jsApiList: [
+        "onMenuShareAppMessage",
+        "onMenuShareTimeline",
+        "updateAppMessageShareData",
+        "updateTimelineShareData"
+      ] // 必填，需要使用的JS接口列表
     });
 
     wx.checkJsApi({
-      jsApiList: ["updateAppMessageShareData", "updateTimelineShareData"], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+      jsApiList: [
+        "onMenuShareAppMessage",
+        "onMenuShareTimeline",
+        "updateAppMessageShareData",
+        "updateTimelineShareData"
+      ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
       success: function(res) {
         // 以键值对的形式返回，可用的api值true，不可用为false
         // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
