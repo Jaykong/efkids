@@ -26,7 +26,7 @@ export default {
       appId: "wxbcac905317a3ba59", // 必填，公众号的唯一标识
       timestamp: 1414587457, // 必填，生成签名的时间戳
       nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
-      signature: "3f47597dff643a30d3e5cc8d13355ac11d2036b2", // 必填，签名
+      signature: "6373b715e80c4f1a4a90e133a5815ed8bf62289c", // 必填，签名
       jsApiList: [
         "onMenuShareAppMessage",
         "onMenuShareTimeline"
@@ -36,7 +36,7 @@ export default {
     wx.ready(function() {
       wx.onMenuShareTimeline({
         title: "宝贝足迹", // 分享标题
-        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "http://www.yiwangezan.cn/?wx", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
         success: function() {
           // 用户点击了分享后执行的回调函数
@@ -45,7 +45,7 @@ export default {
       wx.onMenuShareAppMessage({
         title: "宝贝足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
-        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "http://www.yiwangezan.cn/?wx", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
         type: "", // 分享类型,music、video或link，不填默认为link
         dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
