@@ -27,24 +27,24 @@
 
             <van-col>
               <van-row type="flex">
-                <van-col class="text">
-                  <div>
+                <van-col class="card-text">
+                  <div class="text">
                     恭喜
                     <span :class="'name ' + color">{{ name }}</span> 宝贝
                   </div>
-                  <div>
+                  <div class="text">
                     走过
                     <span :class="'large ' + color">{{ continent_count }}</span
                     >个大洲
                     <span :class="'large ' + color">{{ country_count }}</span
                     >个国家
                   </div>
-                  <div>
+                  <div class="text">
                     领先全国
                     <span :class="'large ' + color">{{ exceed }}%</span>
                     的同龄人
                   </div>
-                  <div>
+                  <div class="text-title">
                     喜获
                     <span :class="'title ' + bg">· {{ title }} ·</span> 称号
                   </div>
@@ -275,7 +275,7 @@ export default {
 
         .photo {
           width: 90px;
-          height: 133px;
+          height: 136px;
           overflow: hidden;
           margin-right: 8px;
 
@@ -291,10 +291,13 @@ export default {
           font-weight: 600;
         }
 
-        .text {
+        .card-text {
           color: rgb(30, 52, 151);
           font-size: 14px;
-          line-height: 20px;
+
+          .text {
+            line-height: 20px;
+          }
 
           .name {
             font-weight: 600;
@@ -303,6 +306,10 @@ export default {
           .large {
             font-size: 20px;
             font-weight: 700;
+          }
+
+          .text-title {
+            margin-top: 8px;
           }
 
           .title {
@@ -317,7 +324,7 @@ export default {
         }
 
         .slogan {
-          margin-top: 12px;
+          margin-top: 8px;
           font-size: 12px;
         }
       }
@@ -325,7 +332,7 @@ export default {
 
     .cell-qrcode {
       position: absolute;
-      top: 500px;
+      top: 494px;
       left: 6vw;
       z-index: 11;
 
@@ -418,7 +425,7 @@ export default {
   .container-save {
     width: 100vw;
     position: absolute;
-    top: 480px;
+    top: 475px;
     z-index: 999;
 
     .text {
@@ -430,7 +437,7 @@ export default {
   .container-start {
     width: 40vw;
     position: absolute;
-    top: 510px;
+    top: 504px;
     right: 6vw;
     z-index: 999;
     .start-btn {
