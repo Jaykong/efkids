@@ -28,6 +28,7 @@ export default {
       nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
       signature: "3f47597dff643a30d3e5cc8d13355ac11d2036b2", // 必填，签名
       jsApiList: [
+        "checkJsApi",
         "onMenuShareAppMessage",
         "onMenuShareTimeline",
         "updateAppMessageShareData",
@@ -49,21 +50,12 @@ export default {
     });
 
     wx.ready(function() {
-      wx.updateAppMessageShareData({
+      wx.onMenuShareTimeline({
         title: "宝贝足迹1", // 分享标题
-        desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
         link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
         success: function() {
-          // 设置成功
-        }
-      });
-      wx.updateTimelineShareData({
-        title: "宝贝足迹2", // 分享标题
-        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
-        success: function() {
-          // 设置成功
+          // 用户点击了分享后执行的回调函数
         }
       });
     });
