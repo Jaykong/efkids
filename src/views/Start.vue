@@ -28,32 +28,27 @@ export default {
       nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
       signature: "3f47597dff643a30d3e5cc8d13355ac11d2036b2", // 必填，签名
       jsApiList: [
-        "checkJsApi",
         "onMenuShareAppMessage",
-        "onMenuShareTimeline",
-        "updateAppMessageShareData",
-        "updateTimelineShareData"
+        "onMenuShareTimeline"
       ] // 必填，需要使用的JS接口列表
-    });
-
-    wx.checkJsApi({
-      jsApiList: [
-        "onMenuShareAppMessage",
-        "onMenuShareTimeline",
-        "updateAppMessageShareData",
-        "updateTimelineShareData"
-      ], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-      success: function(res) {
-        // 以键值对的形式返回，可用的api值true，不可用为false
-        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
-      }
     });
 
     wx.ready(function() {
       wx.onMenuShareTimeline({
-        title: "宝贝足迹1", // 分享标题
+        title: "宝贝足迹", // 分享标题
         link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
+        success: function() {
+          // 用户点击了分享后执行的回调函数
+        }
+      });
+      wx.onMenuShareAppMessage({
+        title: "宝贝足迹", // 分享标题
+        desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
+        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
+        type: "", // 分享类型,music、video或link，不填默认为link
+        dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
         success: function() {
           // 用户点击了分享后执行的回调函数
         }
