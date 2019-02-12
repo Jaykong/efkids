@@ -17,8 +17,6 @@
 </template>
 
 <script>
-const wx = require("../sdk/jweixin-1.4.0.js");
-
 export default {
   mounted() {
     wx.config({
