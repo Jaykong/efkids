@@ -118,7 +118,6 @@ export default {
     margin-top: 5vh;
 
     .photo {
-      background: #fff;
       border-radius: 4px;
       width: 180px;
       height: 272px;
@@ -127,6 +126,7 @@ export default {
       .upload-photo {
         width: 180px;
         height: 272px;
+        background: #fff;
       }
       .my-photo {
         width: 100%;
