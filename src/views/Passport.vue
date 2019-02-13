@@ -132,15 +132,13 @@ export default {
 
     const len = continent.length;
 
-    const num = Number(
-      (
-        (Math.floor(Math.random() * 10) * 100 +
-          Math.floor(Math.random() * 10) * 10 +
-          Math.floor(Math.random() * 10)) /
-        100
-      ).toFixed(2)
-    );
-    this.exceed = 80 + num;
+    const num =
+      (Math.floor(Math.random() * 10) * 100 +
+        Math.floor(Math.random() * 10) * 10 +
+        Math.floor(Math.random() * 10)) /
+      100;
+
+    this.exceed = (80 + num).toFixed(2);
 
     if (len === 0) {
       this.title = "东方文明小使者";
@@ -152,30 +150,30 @@ export default {
       this.color = "traveller";
       this.bg = "traveller-bg";
 
-      this.exceed = 85 + num;
+      this.exceed = (85 + num).toFixed(2);
 
       if (this.country_count >= 4) {
-        this.exceed = 90 + num;
+        this.exceed = (90 + num).toFixed(2);
       } else if (this.country_count >= 5) {
-        this.exceed = 90 + num;
+        this.exceed = (90 + num).toFixed(2);
       } else if (this.country_count >= 6) {
-        this.exceed = 90 + num;
+        this.exceed = (90 + num).toFixed(2);
       }
     } else if (len === 1 && continent.includes("欧洲")) {
       this.title = "欧洲传奇见证者";
       this.color = "witness";
       this.bg = "witness-bg";
-      this.exceed = 85 + num;
+      this.exceed = (85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("北美洲")) {
       this.title = "活力美洲代言人";
       this.color = "spokes";
       this.bg = "spokes-bg";
-      this.exceed = 85 + num;
+      this.exceed = (85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("大洋洲")) {
       this.title = "自然风光记录者";
       this.color = "recorder";
       this.bg = "recorder-bg";
-      this.exceed = 85 + num;
+      this.exceed = (85 + num).toFixed(2);
     } else if (
       (len === 1 && continent.includes("南美洲")) ||
       (len === 1 && continent.includes("南极洲")) ||
@@ -184,7 +182,7 @@ export default {
       this.title = "勇气满满探险家";
       this.color = "explorer";
       this.bg = "explorer-bg";
-      this.exceed = 85 + num;
+      this.exceed = (85 + num).toFixed(2);
     }
   },
   mounted() {
