@@ -1,16 +1,15 @@
 <template>
   <div class="container">
-    <!-- <div class="container-canvas" ref="canvas2img"></div> -->
     <div class="container-passport" id="capture">
       <van-row class="cell-passport" type="flex" justify="center">
         <van-col>
-          <img src="../assets/images/passport_grid_bg.png">
+          <img src="../assets/images/passport_grid_bg.png" />
         </van-col>
       </van-row>
 
       <van-row class="cell-badge">
         <van-col class="badges">
-          <badge-load/>
+          <badge-load />
         </van-col>
         <van-col class="photo-text">
           <van-row type="flex" justify="center">
@@ -18,7 +17,7 @@
               <van-row type="flex" justify="center">
                 <van-col>
                   <div class="photo">
-                    <img :src="photo">
+                    <img :src="photo" />
                   </div>
                   <div :class="'name ' + color">{{ name }}</div>
                 </van-col>
@@ -34,8 +33,10 @@
                   </div>
                   <div class="text">
                     走过
-                    <span :class="'large ' + color">{{ continent_count }}</span>个大洲
-                    <span :class="'large ' + color">{{ country_count }}</span>个国家
+                    <span :class="'large ' + color">{{ continent_count }}</span
+                    >个大洲
+                    <span :class="'large ' + color">{{ country_count }}</span
+                    >个国家
                   </div>
                   <div class="text">
                     领先全国
@@ -51,8 +52,9 @@
 
               <van-row type="flex">
                 <van-col class="slogan">
-                  <div>新的一年，让英孚全球近百条游学线路
-                    <br>陪你去看更大的世界！
+                  <div>
+                    新的一年，让英孚全球近百条游学线路
+                    <br />陪你去看更大的世界！
                   </div>
                 </van-col>
               </van-row>
@@ -63,11 +65,10 @@
 
       <van-row class="cell-qrcode">
         <van-col class="qrcode">
-          <img src="../assets/images/qrcode.png">
+          <img src="../assets/images/qrcode.png" />
         </van-col>
-        <van-col class="text">扫码制作
-          <br>宝贝专属护照
-          <br>回顾世界足迹
+        <van-col class="text"
+          >扫码制作 <br />宝贝专属护照 <br />回顾世界足迹
         </van-col>
       </van-row>
     </div>
@@ -79,10 +80,11 @@
     <van-row class="container-start" type="flex" justify="end">
       <van-col>
         <a href="https://jinshuju.net/f/9ZFULV">
-          <img class="start-btn" src="../assets/images/statNewTripBtn.png">
+          <img class="start-btn" src="../assets/images/statNewTripBtn.png" />
         </a>
       </van-col>
     </van-row>
+    <div class="container-canvas" ref="canvas2img"></div>
   </div>
 </template>
 
@@ -114,6 +116,10 @@ export default {
     BadgeLoad
   },
   created() {
+    if (!this.photo) {
+      this.$router.push("/");
+    }
+
     if (this.current_country.includes("中国")) {
       const index_asia = this.current_continent.indexOf("亚洲");
       this.current_continent.splice(index_asia, 1);
@@ -204,9 +210,9 @@ export default {
       image.height = y;
       image.src = canvas.toDataURL("image/png");
 
-      const _passport = document.querySelector(".container-passport");
-      const _container = document.querySelector(".container");
-      _container.removeChild(_passport);
+      // const _passport = document.querySelector(".container-passport");
+      // const _container = document.querySelector(".container");
+      // _container.removeChild(_passport);
 
       // document.body.appendChild(image);
       this.$refs.canvas2img.appendChild(image);
@@ -215,37 +221,8 @@ export default {
     };
 
     setTimeout(() => {
-      // convert2canvas("#capture");
+      convert2canvas("#capture");
     }, 200);
-
-    wx.config({
-      debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-      appId: "wxbcac905317a3ba59", // 必填，公众号的唯一标识
-      timestamp: 1414587457, // 必填，生成签名的时间戳
-      nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
-      signature: "ac3331e70281acabde1bcf884bf0fa1b2cc83142", // 必填，签名
-      jsApiList: ["updateAppMessageShareData", "updateTimelineShareData"] // 必填，需要使用的JS接口列表
-    });
-
-    wx.ready(function() {
-      wx.updateAppMessageShareData({
-        title: "宝贝足迹", // 分享标题
-        desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
-        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "", // 分享图标
-        success: function() {
-          // 设置成功
-        }
-      });
-      wx.updateTimelineShareData({
-        title: "宝贝足迹", // 分享标题
-        link: "http://www.yiwangezan.cn/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "", // 分享图标
-        success: function() {
-          // 设置成功
-        }
-      });
-    });
   }
 };
 </script>
