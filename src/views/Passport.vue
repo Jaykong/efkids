@@ -116,6 +116,10 @@ export default {
     BadgeLoad
   },
   created() {
+    if (!this.photo) {
+      this.$router.push("/");
+    }
+
     if (this.current_country.includes("中国")) {
       const index_asia = this.current_continent.indexOf("亚洲");
       this.current_continent.splice(index_asia, 1);
