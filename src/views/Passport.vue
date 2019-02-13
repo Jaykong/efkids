@@ -296,8 +296,8 @@ export default {
         width: 100%;
 
         .photo {
-          width: 90px;
-          height: 136px;
+          width: 95px;
+          height: 144px;
           overflow: hidden;
           margin-right: 8px;
 
@@ -382,7 +382,7 @@ export default {
 
     .cell-passport-x {
       position: absolute;
-      top: 30vw;
+      top: 20vw;
       left: 7vw;
       z-index: 10;
 
@@ -395,7 +395,7 @@ export default {
 
     .cell-badge-x {
       position: absolute;
-      top: 30vw;
+      top: 20vw;
       left: 7vw;
       z-index: 11;
 
@@ -413,8 +413,8 @@ export default {
         width: 100%;
 
         .photo {
-          width: 90px;
-          height: 136px;
+          width: 95px;
+          height: 144px;
           overflow: hidden;
           margin-right: 8px;
 
@@ -471,7 +471,7 @@ export default {
 
     .cell-qrcode-x {
       position: absolute;
-      top: 602px;
+      top: 582px;
       left: 6vw;
       z-index: 11;
 
@@ -587,7 +587,7 @@ export default {
   .container-save-x {
     width: 100vw;
     position: absolute;
-    top: 579px;
+    top: 549px;
     z-index: 999;
 
     .text {
@@ -599,7 +599,7 @@ export default {
   .container-start-x {
     width: 40vw;
     position: absolute;
-    top: 612px;
+    top: 592px;
     right: 6vw;
     z-index: 999;
     .start-btn {
