@@ -119,13 +119,13 @@ export default {
 
     .photo {
       border-radius: 4px;
-      width: 180px;
-      height: 272px;
+      width: 140px;
+      height: 212px;
       overflow: hidden;
 
       .upload-photo {
-        width: 180px;
-        height: 272px;
+        width: 140px;
+        height: 212px;
         background: #fff;
       }
       .my-photo {
