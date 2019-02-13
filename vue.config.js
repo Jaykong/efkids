@@ -9,5 +9,8 @@ module.exports = {
         }
       }
     }
+  },
+  devServer: {
+    proxy: "https://www.mufenggame.com"
   }
 };
