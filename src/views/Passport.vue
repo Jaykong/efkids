@@ -382,7 +382,7 @@ export default {
 
     .cell-passport-x {
       position: absolute;
-      top: 18vw;
+      top: 16vw;
       left: 7vw;
       z-index: 10;
 
@@ -395,7 +395,7 @@ export default {
 
     .cell-badge-x {
       position: absolute;
-      top: 18vw;
+      top: 16vw;
       left: 7vw;
       z-index: 11;
 
@@ -448,7 +448,7 @@ export default {
           }
 
           .text-title {
-            margin-top: 8px;
+            margin-top: 4px;
           }
 
           .title {
@@ -587,7 +587,7 @@ export default {
   .container-save-x {
     width: 100vw;
     position: absolute;
-    top: 534px;
+    top: 532px;
     z-index: 999;
 
     .text {
