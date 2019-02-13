@@ -2,14 +2,14 @@
   <div class="container">
     <van-row type="flex">
       <van-col class="cell-logo">
-        <img class="logo" src="../assets/images/efLogo_start.png">
+        <img class="logo" src="../assets/images/efLogo_start.png" />
       </van-col>
     </van-row>
 
     <van-row class="cell-btn" type="flex" justify="center">
       <van-col>
         <router-link to="/selectcountry">
-          <img class="enter-btn" src="../assets/images/enterBtn.png">
+          <img class="enter-btn" src="../assets/images/enterBtn.png" />
         </router-link>
       </van-col>
     </van-row>
@@ -22,7 +22,7 @@ import axios from "axios";
 export default {
   mounted() {
     this.getSignature(r => {
-      if(r) {
+      if (r) {
         wx.config({
           debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
           appId: r.appId, // 必填，公众号的唯一标识
@@ -32,8 +32,7 @@ export default {
           jsApiList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 必填，需要使用的JS接口列表
         });
       }
-    })
-
+    });
 
     wx.ready(function() {
       wx.onMenuShareTimeline({
@@ -60,12 +59,10 @@ export default {
   methods: {
     getSignature(callback) {
       const api = "https://www.mufenggame.com/wxJssdk/getJssdk";
-      const current_url = window.location.href;
+      // const current_url = window.location.href;
 
       axios
-        .post(api, {
-          url: current_url
-        })
+        .get(api)
         .then(function(r) {
           console.log(r);
           if (r.status === 200) {
