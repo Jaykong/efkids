@@ -106,6 +106,9 @@ import { mapState } from "vuex";
 import html2canvas from "html2canvas";
 import BadgeLoad from "../components/BadgeLoad";
 
+import axios from "axios";
+import sha1 from "js-sha1";
+
 export default {
   data() {
     return {
@@ -249,6 +252,8 @@ export default {
         const noncestr = this.getRandomString(16);
         const timestamp = new Date().getTime();
         const url = window.location.href;
+
+        console.log(url)
 
         const string1 = `jsapi_ticket=${ticket}&noncestr=${noncestr}&timestamp=${timestamp}&url=${url}`;
         const signature = sha1(string1);
