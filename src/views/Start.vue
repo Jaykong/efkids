@@ -21,39 +21,41 @@ import ef_logo from "../assets/images/efLogo_start.png";
 
 export default {
   mounted() {
-    wx.config({
-      debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-      appId: "wxbcac905317a3ba59", // 必填，公众号的唯一标识
-      timestamp: 1414587457, // 必填，生成签名的时间戳
-      nonceStr: "Wm3WZYTPz0wzccnW", // 必填，生成签名的随机串
-      signature: "6373b715e80c4f1a4a90e133a5815ed8bf62289c", // 必填，签名
-      jsApiList: [
-        "onMenuShareAppMessage",
-        "onMenuShareTimeline"
-      ] // 必填，需要使用的JS接口列表
-    });
+      if (wx) {
+          axios.post('https://www.mufenggame.com/wxJssdk/getJssdk', {url: location.href}).then((response) => {
+              var data = response.data
 
-    wx.ready(function() {
-      wx.onMenuShareTimeline({
-        title: "宝贝足迹", // 分享标题
-        link: "http://www.yiwangezan.cn/?wx", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
-        success: function() {
-          // 用户点击了分享后执行的回调函数
-        }
-      });
-      wx.onMenuShareAppMessage({
-        title: "宝贝足迹", // 分享标题
-        desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
-        link: "http://www.yiwangezan.cn/?wx", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: "http://www.yiwangezan.cn/loading/loading.png", // 分享图标
-        type: "", // 分享类型,music、video或link，不填默认为link
-        dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
-        success: function() {
-          // 用户点击了分享后执行的回调函数
-        }
-      });
-    });
+              wx.config({
+                  debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                  appId: data.appId, // 必填，公众号的唯一标识
+                  timestamp: data.timestamp, // 必填，生成签名的时间戳
+                  nonceStr: data.nonceStr, // 必填，生成签名的随机串
+                  signature: data.signature,// 必填，签名，见附录1
+                  jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+              });
+
+              wx.ready(function () {
+                  wx.onMenuShareTimeline({
+                      title: wxShare.title,
+                      desc: wxShare.desc,
+                      link: wxShare.link,
+                      imgUrl: wxShare.imgUrl
+                  });
+
+                  wx.onMenuShareAppMessage({
+                      title: wxShare.title,
+                      desc: wxShare.desc,
+                      link: wxShare.link,
+                      imgUrl: wxShare.imgUrl
+                  });
+              })
+
+              wx.error(function (res) {
+                  // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+              })
+          })
+
+      }
   }
 };
 </script>
