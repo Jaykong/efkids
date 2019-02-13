@@ -36,17 +36,17 @@ export default {
 
               wx.ready(function () {
                   wx.onMenuShareTimeline({
-                      title: wxShare.title,
+                      title: "我的分享",
                       desc: wxShare.desc,
                       link: wxShare.link,
-                      imgUrl: wxShare.imgUrl
+                      imgUrl: "http://www.yiwangezan.cn/loading/loading.png"
                   });
 
                   wx.onMenuShareAppMessage({
                       title: wxShare.title,
                       desc: wxShare.desc,
                       link: wxShare.link,
-                      imgUrl: wxShare.imgUrl
+                      imgUrl: "http://www.yiwangezan.cn/loading/loading.png"
                   });
               })
 
