@@ -50,7 +50,7 @@ import { Toast } from "vant";
 export default {
   data() {
     return {
-      activeNames: ["亚洲"]
+      activeNames: []
     };
   },
   computed: {
