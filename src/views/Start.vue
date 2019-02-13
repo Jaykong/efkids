@@ -2,14 +2,14 @@
   <div class="container">
     <van-row type="flex">
       <van-col class="cell-logo">
-        <img class="logo" src="../assets/images/efLogo_start.png" />
+        <img class="logo" src="../assets/images/efLogo_start.png">
       </van-col>
     </van-row>
 
     <van-row class="cell-btn" type="flex" justify="center">
       <van-col>
         <router-link to="/selectcountry">
-          <img class="enter-btn" src="../assets/images/enterBtn.png" />
+          <img class="enter-btn" src="../assets/images/enterBtn.png">
         </router-link>
       </van-col>
     </van-row>
@@ -18,17 +18,27 @@
 
 <script>
 import axios from "axios";
+import sha1 from "js-sha1";
 
 export default {
   mounted() {
     this.getSignature(r => {
       if (r) {
+        const appId = r.appId;
+        const ticket = r.ticket;
+        const noncestr = this.getRandomString(16);
+        const timestamp = new Date().getTime();
+        const url = window.location.href;
+
+        const string1 = `jsapi_ticket=${ticket}&noncestr=${noncestr}&timestamp=${timestamp}&url=${url}`;
+        const signature = sha1(string1);
+
         wx.config({
           debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-          appId: r.appId, // 必填，公众号的唯一标识
-          timestamp: r.timestamp, // 必填，生成签名的时间戳
-          nonceStr: r.nonceStr, // 必填，生成签名的随机串
-          signature: r.signature, // 必填，签名
+          appId, // 必填，公众号的唯一标识
+          timestamp, // 必填，生成签名的时间戳
+          nonceStr: noncestr, // 必填，生成签名的随机串
+          signature, // 必填，签名
           jsApiList: ["onMenuShareAppMessage", "onMenuShareTimeline"] // 必填，需要使用的JS接口列表
         });
       }
@@ -73,6 +83,17 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+    },
+    getRandomString(len) {
+      len = len || 32;
+      let $chars =
+        "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678"; /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+      let maxPos = $chars.length;
+      let pwd = "";
+      for (let i = 0; i < len; i++) {
+        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+      }
+      return pwd;
     }
   }
 };
