@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <div class="container-passport" id="capture">
-      <van-row class="cell-passport" type="flex" justify="center">
+      <van-row
+        :class="screen_scale > 2 ? 'cell-passport-x' : 'cell-passport'"
+        type="flex"
+        justify="center"
+      >
         <van-col>
           <img src="../assets/images/passport_grid_bg.png" />
         </van-col>
       </van-row>
 
-      <van-row class="cell-badge">
+      <van-row :class="screen_scale > 2 ? 'cell-badge-x' : 'cell-badge'">
         <van-col class="badges">
           <badge-load />
         </van-col>
@@ -24,7 +28,7 @@
               </van-row>
             </van-col>
 
-            <van-col>
+            <van-col class="cell-text">
               <van-row type="flex">
                 <van-col class="card-text">
                   <div class="text">
@@ -63,7 +67,7 @@
         </van-col>
       </van-row>
 
-      <van-row class="cell-qrcode">
+      <van-row :class="screen_scale > 2 ? 'cell-qrcode-x' : 'cell-qrcode'">
         <van-col class="qrcode">
           <img src="../assets/images/qrcode.png" />
         </van-col>
@@ -73,11 +77,20 @@
       </van-row>
     </div>
 
-    <van-row class="container-save" type="flex" justify="center" align="center">
+    <van-row
+      :class="screen_scale > 2 ? 'container-save-x' : 'container-save'"
+      type="flex"
+      justify="center"
+      align="center"
+    >
       <van-col class="text">长按保存图片，分享朋友圈晒出宝贝的世界足迹</van-col>
     </van-row>
 
-    <van-row class="container-start" type="flex" justify="end">
+    <van-row
+      :class="screen_scale > 2 ? 'container-start-x' : 'container-start'"
+      type="flex"
+      justify="end"
+    >
       <van-col>
         <a href="https://jinshuju.net/f/9ZFULV">
           <img class="start-btn" src="../assets/images/statNewTripBtn.png" />
@@ -96,6 +109,7 @@ import BadgeLoad from "../components/BadgeLoad";
 export default {
   data() {
     return {
+      screen_scale: 1.7,
       title: "东方文明小使者",
       color: "messenger",
       bg: "messenger-bg",
@@ -120,6 +134,12 @@ export default {
       this.$router.push("/");
     }
 
+    const screen_width = window.screen.width;
+    const screen_height = window.screen.height;
+
+    // console.log(screen_width, screen_height);
+    this.screen_scale = screen_height / screen_width;
+
     if (this.current_country.includes("中国")) {
       const index_asia = this.current_continent.indexOf("亚洲");
       this.current_continent.splice(index_asia, 1);
@@ -132,50 +152,48 @@ export default {
 
     const len = continent.length;
 
-    const num = Number(
-      (
-        (Math.floor(Math.random() * 10) * 100 +
-          Math.floor(Math.random() * 10) * 10 +
-          Math.floor(Math.random() * 10)) /
-        100
-      ).toFixed(2)
-    );
-    this.exceed = 80 + num;
+    const num =
+      (Math.floor(Math.random() * 10) * 100 +
+        Math.floor(Math.random() * 10) * 10 +
+        Math.floor(Math.random() * 10)) /
+      100;
+
+    this.exceed = Number(80 + num).toFixed(2);
 
     if (len === 0) {
       this.title = "东方文明小使者";
       this.color = "messenger";
       this.bg = "messenger-bg";
-      this.exceed = 80 + num;
+      this.exceed = Number(80 + num).toFixed(2);
     } else if (len >= 2) {
       this.title = "小小环球旅行家";
       this.color = "traveller";
       this.bg = "traveller-bg";
 
-      this.exceed = 85 + num;
+      this.exceed = Number(85 + num).toFixed(2);
 
       if (this.country_count >= 4) {
-        this.exceed = 90 + num;
+        this.exceed = Number(90 + num).toFixed(2);
       } else if (this.country_count >= 5) {
-        this.exceed = 90 + num;
+        this.exceed = Number(90 + num).toFixed(2);
       } else if (this.country_count >= 6) {
-        this.exceed = 90 + num;
+        this.exceed = Number(90 + num).toFixed(2);
       }
     } else if (len === 1 && continent.includes("欧洲")) {
       this.title = "欧洲传奇见证者";
       this.color = "witness";
       this.bg = "witness-bg";
-      this.exceed = 85 + num;
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("北美洲")) {
       this.title = "活力美洲代言人";
       this.color = "spokes";
       this.bg = "spokes-bg";
-      this.exceed = 85 + num;
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("大洋洲")) {
       this.title = "自然风光记录者";
       this.color = "recorder";
       this.bg = "recorder-bg";
-      this.exceed = 85 + num;
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (
       (len === 1 && continent.includes("南美洲")) ||
       (len === 1 && continent.includes("南极洲")) ||
@@ -184,7 +202,7 @@ export default {
       this.title = "勇气满满探险家";
       this.color = "explorer";
       this.bg = "explorer-bg";
-      this.exceed = 85 + num;
+      this.exceed = Number(85 + num).toFixed(2);
     }
   },
   mounted() {
@@ -278,8 +296,8 @@ export default {
         width: 100%;
 
         .photo {
-          width: 90px;
-          height: 136px;
+          width: 95px;
+          height: 144px;
           overflow: hidden;
           margin-right: 8px;
 
@@ -295,41 +313,53 @@ export default {
           font-weight: 600;
         }
 
-        .card-text {
-          color: rgb(30, 52, 151);
-          font-size: 14px;
+        .cell-text {
+          width: 208px;
+          height: 144px;
+          position: relative;
 
-          .text {
-            line-height: 20px;
+          .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            color: rgb(30, 52, 151);
+            font-size: 14px;
+
+            .text {
+              line-height: 20px;
+            }
+
+            .name {
+              font-weight: 600;
+            }
+
+            .large {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .text-title {
+              margin-top: 4px;
+            }
+
+            .title {
+              font-weight: 600;
+              height: 28px;
+              line-height: 28px;
+              display: inline-block;
+              color: #fff;
+              padding: 0 8px;
+              border-radius: 14px;
+            }
           }
+          .slogan {
+            position: absolute;
+            left: 0;
+            bottom: 0;
 
-          .name {
-            font-weight: 600;
+            font-size: 12px;
           }
-
-          .large {
-            font-size: 20px;
-            font-weight: 700;
-          }
-
-          .text-title {
-            margin-top: 8px;
-          }
-
-          .title {
-            font-weight: 600;
-            height: 28px;
-            line-height: 28px;
-            display: inline-block;
-            color: #fff;
-            padding: 0 8px;
-            border-radius: 14px;
-          }
-        }
-
-        .slogan {
-          margin-top: 8px;
-          font-size: 12px;
         }
       }
     }
@@ -337,6 +367,135 @@ export default {
     .cell-qrcode {
       position: absolute;
       top: 494px;
+      left: 6vw;
+      z-index: 11;
+
+      width: 50vw;
+
+      .qrcode {
+        width: 60px;
+        height: 60px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .text {
+        font-size: 12px;
+        color: #fff;
+
+        position: absolute;
+        bottom: 0;
+        left: 72px;
+      }
+    }
+
+    .cell-passport-x {
+      position: absolute;
+      top: 16vw;
+      left: 7vw;
+      z-index: 10;
+
+      width: 89.5vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .cell-badge-x {
+      position: absolute;
+      top: 16vw;
+      left: 7vw;
+      z-index: 11;
+
+      width: 86vw;
+
+      .badges {
+        margin-top: 6vw;
+        width: 100%;
+        height: 230px;
+        overflow: hidden;
+      }
+
+      .photo-text {
+        margin-top: 3vw;
+        width: 100%;
+
+        .photo {
+          width: 95px;
+          height: 144px;
+          overflow: hidden;
+          margin-right: 8px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .name {
+          width: 95px;
+          margin-top: 4px;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .cell-text {
+          width: 208px;
+          height: 144px;
+          position: relative;
+
+          .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            color: rgb(30, 52, 151);
+            font-size: 14px;
+
+            .text {
+              line-height: 20px;
+            }
+
+            .name {
+              font-weight: 600;
+            }
+
+            .large {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .text-title {
+              margin-top: 4px;
+            }
+
+            .title {
+              font-weight: 600;
+              height: 28px;
+              line-height: 28px;
+              display: inline-block;
+              color: #fff;
+              padding: 0 8px;
+              border-radius: 14px;
+            }
+          }
+          .slogan {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .cell-qrcode-x {
+      position: absolute;
+      top: 557px;
       left: 6vw;
       z-index: 11;
 
@@ -442,6 +601,29 @@ export default {
     width: 40vw;
     position: absolute;
     top: 504px;
+    right: 6vw;
+    z-index: 999;
+    .start-btn {
+      width: 150px;
+    }
+  }
+
+  .container-save-x {
+    width: 100vw;
+    position: absolute;
+    top: 532px;
+    z-index: 999;
+
+    .text {
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+
+  .container-start-x {
+    width: 40vw;
+    position: absolute;
+    top: 567px;
     right: 6vw;
     z-index: 999;
     .start-btn {
