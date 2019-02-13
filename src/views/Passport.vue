@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <div class="container-canvas" ref="canvas2img"></div>
     <div class="container-passport" id="capture">
       <van-row class="cell-passport" type="flex" justify="center">
         <van-col>
@@ -85,6 +84,7 @@
         </a>
       </van-col>
     </van-row>
+    <div class="container-canvas" ref="canvas2img"></div>
   </div>
 </template>
 
@@ -206,9 +206,9 @@ export default {
       image.height = y;
       image.src = canvas.toDataURL("image/png");
 
-      const _passport = document.querySelector(".container-passport");
-      const _container = document.querySelector(".container");
-      _container.removeChild(_passport);
+      // const _passport = document.querySelector(".container-passport");
+      // const _container = document.querySelector(".container");
+      // _container.removeChild(_passport);
 
       // document.body.appendChild(image);
       this.$refs.canvas2img.appendChild(image);
