@@ -38,7 +38,7 @@ export default {
                   wx.onMenuShareTimeline({
                       title: "我的分享",
                       desc: wxShare.desc,
-                      link: wxShare.link,
+                      link: "https://www.mufenggame.com",
                       imgUrl: "http://www.yiwangezan.cn/loading/loading.png"
                   });
 
