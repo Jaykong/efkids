@@ -121,12 +121,12 @@ export default {
       background: #fff;
       border-radius: 4px;
       width: 180px;
-      height: 240px;
+      height: 272px;
       overflow: hidden;
 
       .upload-photo {
         width: 180px;
-        height: 240px;
+        height: 272px;
       }
       .my-photo {
         width: 100%;
