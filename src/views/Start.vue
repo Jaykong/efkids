@@ -66,7 +66,7 @@ export default {
         .then(function(r) {
           console.log(r);
           if (r.status === 200) {
-            const data = r.data;
+            const data = r.data.data;
             callback(data);
           }
         })
