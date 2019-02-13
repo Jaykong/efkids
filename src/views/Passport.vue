@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <div class="container-passport" id="capture">
-      <van-row class="cell-passport" type="flex" justify="center">
+      <van-row
+        :class="screen_scale > 2 ? 'cell-passport-x' : 'cell-passport'"
+        type="flex"
+        justify="center"
+      >
         <van-col>
           <img src="../assets/images/passport_grid_bg.png" />
         </van-col>
       </van-row>
 
-      <van-row class="cell-badge">
+      <van-row :class="screen_scale > 2 ? 'cell-badge-x' : 'cell-badge'">
         <van-col class="badges">
           <badge-load />
         </van-col>
@@ -63,7 +67,7 @@
         </van-col>
       </van-row>
 
-      <van-row class="cell-qrcode">
+      <van-row :class="screen_scale > 2 ? 'cell-qrcode-x' : 'cell-qrcode'">
         <van-col class="qrcode">
           <img src="../assets/images/qrcode.png" />
         </van-col>
@@ -73,11 +77,20 @@
       </van-row>
     </div>
 
-    <van-row class="container-save" type="flex" justify="center" align="center">
+    <van-row
+      :class="screen_scale > 2 ? 'container-save-x' : 'container-save'"
+      type="flex"
+      justify="center"
+      align="center"
+    >
       <van-col class="text">长按保存图片，分享朋友圈晒出宝贝的世界足迹</van-col>
     </van-row>
 
-    <van-row class="container-start" type="flex" justify="end">
+    <van-row
+      :class="screen_scale > 2 ? 'container-start-x' : 'container-start'"
+      type="flex"
+      justify="end"
+    >
       <van-col>
         <a href="https://jinshuju.net/f/9ZFULV">
           <img class="start-btn" src="../assets/images/statNewTripBtn.png" />
@@ -96,6 +109,7 @@ import BadgeLoad from "../components/BadgeLoad";
 export default {
   data() {
     return {
+      screen_scale: 1.7,
       title: "东方文明小使者",
       color: "messenger",
       bg: "messenger-bg",
@@ -119,6 +133,12 @@ export default {
     if (!this.photo) {
       this.$router.push("/");
     }
+
+    const screen_width = window.screen.width;
+    const screen_height = window.screen.height;
+
+    // console.log(screen_width, screen_height);
+    this.screen_scale = screen_height / screen_width;
 
     if (this.current_country.includes("中国")) {
       const index_asia = this.current_continent.indexOf("亚洲");
@@ -359,6 +379,123 @@ export default {
         left: 72px;
       }
     }
+
+    .cell-passport-x {
+      position: absolute;
+      top: 30vw;
+      left: 7vw;
+      z-index: 10;
+
+      width: 89.5vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .cell-badge-x {
+      position: absolute;
+      top: 30vw;
+      left: 7vw;
+      z-index: 11;
+
+      width: 86vw;
+
+      .badges {
+        margin-top: 6vw;
+        width: 100%;
+        height: 230px;
+        overflow: hidden;
+      }
+
+      .photo-text {
+        margin-top: 3vw;
+        width: 100%;
+
+        .photo {
+          width: 90px;
+          height: 136px;
+          overflow: hidden;
+          margin-right: 8px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .name {
+          width: 90px;
+          margin-top: 4px;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .card-text {
+          color: rgb(30, 52, 151);
+          font-size: 14px;
+
+          .text {
+            line-height: 20px;
+          }
+
+          .name {
+            font-weight: 600;
+          }
+
+          .large {
+            font-size: 20px;
+            font-weight: 700;
+          }
+
+          .text-title {
+            margin-top: 8px;
+          }
+
+          .title {
+            font-weight: 600;
+            height: 28px;
+            line-height: 28px;
+            display: inline-block;
+            color: #fff;
+            padding: 0 8px;
+            border-radius: 14px;
+          }
+        }
+
+        .slogan {
+          margin-top: 8px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .cell-qrcode-x {
+      position: absolute;
+      top: 602px;
+      left: 6vw;
+      z-index: 11;
+
+      width: 50vw;
+
+      .qrcode {
+        width: 60px;
+        height: 60px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .text {
+        font-size: 12px;
+        color: #fff;
+
+        position: absolute;
+        bottom: 0;
+        left: 72px;
+      }
+    }
   }
 
   //见证者
@@ -440,6 +577,29 @@ export default {
     width: 40vw;
     position: absolute;
     top: 504px;
+    right: 6vw;
+    z-index: 999;
+    .start-btn {
+      width: 150px;
+    }
+  }
+
+  .container-save-x {
+    width: 100vw;
+    position: absolute;
+    top: 579px;
+    z-index: 999;
+
+    .text {
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+
+  .container-start-x {
+    width: 40vw;
+    position: absolute;
+    top: 612px;
     right: 6vw;
     z-index: 999;
     .start-btn {
