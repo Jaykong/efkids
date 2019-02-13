@@ -28,7 +28,7 @@
               </van-row>
             </van-col>
 
-            <van-col>
+            <van-col class="cell-text">
               <van-row type="flex">
                 <van-col class="card-text">
                   <div class="text">
@@ -158,42 +158,42 @@ export default {
         Math.floor(Math.random() * 10)) /
       100;
 
-    this.exceed = (80 + num).toFixed(2);
+    this.exceed = Number(80 + num).toFixed(2);
 
     if (len === 0) {
       this.title = "东方文明小使者";
       this.color = "messenger";
       this.bg = "messenger-bg";
-      this.exceed = 80 + num;
+      this.exceed = Number(80 + num).toFixed(2);
     } else if (len >= 2) {
       this.title = "小小环球旅行家";
       this.color = "traveller";
       this.bg = "traveller-bg";
 
-      this.exceed = (85 + num).toFixed(2);
+      this.exceed = Number(85 + num).toFixed(2);
 
       if (this.country_count >= 4) {
-        this.exceed = (90 + num).toFixed(2);
+        this.exceed = Number(90 + num).toFixed(2);
       } else if (this.country_count >= 5) {
-        this.exceed = (90 + num).toFixed(2);
+        this.exceed = Number(90 + num).toFixed(2);
       } else if (this.country_count >= 6) {
-        this.exceed = (90 + num).toFixed(2);
+        this.exceed = Number(90 + num).toFixed(2);
       }
     } else if (len === 1 && continent.includes("欧洲")) {
       this.title = "欧洲传奇见证者";
       this.color = "witness";
       this.bg = "witness-bg";
-      this.exceed = (85 + num).toFixed(2);
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("北美洲")) {
       this.title = "活力美洲代言人";
       this.color = "spokes";
       this.bg = "spokes-bg";
-      this.exceed = (85 + num).toFixed(2);
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("大洋洲")) {
       this.title = "自然风光记录者";
       this.color = "recorder";
       this.bg = "recorder-bg";
-      this.exceed = (85 + num).toFixed(2);
+      this.exceed = Number(85 + num).toFixed(2);
     } else if (
       (len === 1 && continent.includes("南美洲")) ||
       (len === 1 && continent.includes("南极洲")) ||
@@ -202,7 +202,7 @@ export default {
       this.title = "勇气满满探险家";
       this.color = "explorer";
       this.bg = "explorer-bg";
-      this.exceed = (85 + num).toFixed(2);
+      this.exceed = Number(85 + num).toFixed(2);
     }
   },
   mounted() {
@@ -313,41 +313,53 @@ export default {
           font-weight: 600;
         }
 
-        .card-text {
-          color: rgb(30, 52, 151);
-          font-size: 14px;
+        .cell-text {
+          width: 208px;
+          height: 144px;
+          position: relative;
 
-          .text {
-            line-height: 20px;
+          .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            color: rgb(30, 52, 151);
+            font-size: 14px;
+
+            .text {
+              line-height: 20px;
+            }
+
+            .name {
+              font-weight: 600;
+            }
+
+            .large {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .text-title {
+              margin-top: 4px;
+            }
+
+            .title {
+              font-weight: 600;
+              height: 28px;
+              line-height: 28px;
+              display: inline-block;
+              color: #fff;
+              padding: 0 8px;
+              border-radius: 14px;
+            }
           }
+          .slogan {
+            position: absolute;
+            left: 0;
+            bottom: 0;
 
-          .name {
-            font-weight: 600;
+            font-size: 12px;
           }
-
-          .large {
-            font-size: 20px;
-            font-weight: 700;
-          }
-
-          .text-title {
-            margin-top: 8px;
-          }
-
-          .title {
-            font-weight: 600;
-            height: 28px;
-            line-height: 28px;
-            display: inline-block;
-            color: #fff;
-            padding: 0 8px;
-            border-radius: 14px;
-          }
-        }
-
-        .slogan {
-          margin-top: 8px;
-          font-size: 12px;
         }
       }
     }
@@ -424,47 +436,59 @@ export default {
         }
 
         .name {
-          width: 90px;
+          width: 95px;
           margin-top: 4px;
           text-align: center;
           font-weight: 600;
         }
 
-        .card-text {
-          color: rgb(30, 52, 151);
-          font-size: 14px;
+        .cell-text {
+          width: 208px;
+          height: 144px;
+          position: relative;
 
-          .text {
-            line-height: 20px;
+          .card-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            color: rgb(30, 52, 151);
+            font-size: 14px;
+
+            .text {
+              line-height: 20px;
+            }
+
+            .name {
+              font-weight: 600;
+            }
+
+            .large {
+              font-size: 20px;
+              font-weight: 700;
+            }
+
+            .text-title {
+              margin-top: 4px;
+            }
+
+            .title {
+              font-weight: 600;
+              height: 28px;
+              line-height: 28px;
+              display: inline-block;
+              color: #fff;
+              padding: 0 8px;
+              border-radius: 14px;
+            }
           }
+          .slogan {
+            position: absolute;
+            left: 0;
+            bottom: 0;
 
-          .name {
-            font-weight: 600;
+            font-size: 12px;
           }
-
-          .large {
-            font-size: 20px;
-            font-weight: 700;
-          }
-
-          .text-title {
-            margin-top: 4px;
-          }
-
-          .title {
-            font-weight: 600;
-            height: 28px;
-            line-height: 28px;
-            display: inline-block;
-            color: #fff;
-            padding: 0 8px;
-            border-radius: 14px;
-          }
-        }
-
-        .slogan {
-          margin-top: 8px;
-          font-size: 12px;
         }
       }
     }
