@@ -2,10 +2,7 @@
   <div class="container">
     <van-row type="flex" justify="center">
       <van-col class="cell-text">
-        <img
-          class="select-text"
-          src="../assets/images/select_footprint_text.png"
-        />
+        <img class="select-text" src="../assets/images/select_footprint_text.png">
       </van-col>
     </van-row>
     <van-row type="flex" justify="center">
@@ -24,8 +21,7 @@
               size="small"
               :type="current_country.includes(i) ? 'primary' : 'default'"
               @click="onSelect(item.name, i)"
-              >{{ i }}</van-button
-            >
+            >{{ i }}</van-button>
           </van-collapse-item>
         </van-collapse>
       </van-col>
@@ -33,11 +29,7 @@
 
     <van-row class="cell-btn" type="flex" justify="center">
       <van-col>
-        <img
-          @click="onSubmit"
-          class="country-btn"
-          src="../assets/images/submitBtn.png"
-        />
+        <img @click="onSubmit" class="country-btn" src="../assets/images/submitBtn.png">
       </van-col>
     </van-row>
   </div>
@@ -87,7 +79,7 @@ export default {
 
     wx.ready(function() {
       wx.onMenuShareTimeline({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
@@ -95,7 +87,7 @@ export default {
         }
       });
       wx.onMenuShareAppMessage({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标

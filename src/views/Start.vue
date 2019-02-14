@@ -46,7 +46,7 @@ export default {
 
     wx.ready(function() {
       wx.onMenuShareTimeline({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
@@ -54,7 +54,7 @@ export default {
         }
       });
       wx.onMenuShareAppMessage({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标

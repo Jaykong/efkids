@@ -2,28 +2,17 @@
   <div class="container">
     <van-row type="flex" justify="center">
       <van-col class="cell-upload-text">
-        <img class="select-text" src="../assets/images/upload_text.png" />
+        <img class="select-text" src="../assets/images/upload_text.png">
       </van-col>
     </van-row>
 
     <van-row class="cell-photo" type="flex" justify="center">
       <van-col class="photo">
-        <img
-          v-if="photo"
-          @click="this.onUploadAgain"
-          class="my-photo"
-          :src="photo"
-          width="180"
-        />
+        <img v-if="photo" @click="this.onUploadAgain" class="my-photo" :src="photo" width="180">
 
         <van-uploader v-else :after-read="onRead">
-          <van-row
-            class="upload-photo"
-            type="flex"
-            justify="center"
-            align="center"
-          >
-            <van-icon color="#ddd" size="40px" name="photograph" />
+          <van-row class="upload-photo" type="flex" justify="center" align="center">
+            <van-icon color="#ddd" size="40px" name="photograph"/>
           </van-row>
         </van-uploader>
       </van-col>
@@ -31,28 +20,21 @@
 
     <van-row type="flex" justify="center">
       <van-col class="cell-input-text">
-        <img
-          class="select-text"
-          src="../assets/images/input_nickname_text.png"
-        />
+        <img class="select-text" src="../assets/images/input_nickname_text.png">
       </van-col>
     </van-row>
 
     <van-row class="cell-input" type="flex" justify="center">
       <van-col>
         <van-cell-group>
-          <van-field class="input" v-model="name" />
+          <van-field class="input" v-model="name"/>
         </van-cell-group>
       </van-col>
     </van-row>
 
     <van-row class="cell-btn" type="flex" justify="center" align="center">
       <van-col>
-        <img
-          @click="onGeneratePost"
-          class="upload-btn"
-          src="../assets/images/generatePost.png"
-        />
+        <img @click="onGeneratePost" class="upload-btn" src="../assets/images/generatePost.png">
       </van-col>
     </van-row>
   </div>
@@ -96,7 +78,7 @@ export default {
 
     wx.ready(function() {
       wx.onMenuShareTimeline({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
@@ -104,7 +86,7 @@ export default {
         }
       });
       wx.onMenuShareAppMessage({
-        title: "宝贝足迹", // 分享标题
+        title: "定制宝贝环球足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
         link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
