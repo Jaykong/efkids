@@ -12,6 +12,7 @@
     "babel-plugin-import": "^1.11.0",
     "html2canvas": "^1.0.0-alpha.12",
     "js-sha1": "^0.6.0",
+    "mta-h5-analysis": "^2.0.15",
     "postcss-px-to-viewport": "^1.1.0",
     "vant": "^1.6.2",
     "vue": "^2.5.22",
