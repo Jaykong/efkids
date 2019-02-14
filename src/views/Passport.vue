@@ -42,11 +42,13 @@
                     <span :class="'large ' + color">{{ country_count }}</span
                     >个国家
                   </div>
-                  <div class="text">
+
+                  <div v-if="exceed" class="text">
                     领先全国
                     <span :class="'large ' + color">{{ exceed }}%</span>
                     的同龄人
                   </div>
+
                   <div class="text-title">
                     喜获
                     <span :class="'title ' + bg">· {{ title }} ·</span> 称号
@@ -117,7 +119,7 @@ export default {
       color: "messenger",
       bg: "messenger-bg",
       continent_count: 1,
-      exceed: 88
+      exceed: 0
     };
   },
   computed: {
@@ -155,48 +157,42 @@ export default {
 
     const len = continent.length;
 
-    const num =
-      (Math.floor(Math.random() * 10) * 100 +
-        Math.floor(Math.random() * 10) * 10 +
-        Math.floor(Math.random() * 10)) /
-      100;
+    const num = Math.floor(Math.random() * 10) / 100;
 
-    this.exceed = Number(80 + num).toFixed(2);
+    const country_count = this.country_count;
+
+    this.exceed = (84 + (15/26)*country_count + num).toFixed(2);
+
+    if((84 + (15/26)*country_count)>98) {
+      this.exceed = (98 + num).toFixed(2);
+    }
+
+    if(this.country_count===1 && this.current_country.includes("中国")) {
+      this.exceed = 0;
+    }
 
     if (len === 0) {
       this.title = "东方文明小使者";
       this.color = "messenger";
       this.bg = "messenger-bg";
-      this.exceed = Number(80 + num).toFixed(2);
+
+      this.continent_count = 1;
     } else if (len >= 2) {
       this.title = "小小环球旅行家";
       this.color = "traveller";
       this.bg = "traveller-bg";
-
-      this.exceed = Number(85 + num).toFixed(2);
-
-      if (this.country_count >= 4) {
-        this.exceed = Number(90 + num).toFixed(2);
-      } else if (this.country_count >= 5) {
-        this.exceed = Number(90 + num).toFixed(2);
-      } else if (this.country_count >= 6) {
-        this.exceed = Number(90 + num).toFixed(2);
-      }
     } else if (len === 1 && continent.includes("欧洲")) {
       this.title = "欧洲传奇见证者";
       this.color = "witness";
       this.bg = "witness-bg";
-      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("北美洲")) {
       this.title = "活力美洲代言人";
       this.color = "spokes";
       this.bg = "spokes-bg";
-      this.exceed = Number(85 + num).toFixed(2);
     } else if (len === 1 && continent.includes("大洋洲")) {
       this.title = "自然风光记录者";
       this.color = "recorder";
       this.bg = "recorder-bg";
-      this.exceed = Number(85 + num).toFixed(2);
     } else if (
       (len === 1 && continent.includes("南美洲")) ||
       (len === 1 && continent.includes("南极洲")) ||
@@ -205,7 +201,6 @@ export default {
       this.title = "勇气满满探险家";
       this.color = "explorer";
       this.bg = "explorer-bg";
-      this.exceed = Number(85 + num).toFixed(2);
     }
   },
   mounted() {
