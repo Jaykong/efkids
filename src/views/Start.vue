@@ -60,7 +60,7 @@ export default {
   methods: {
     getSignature(callback) {
       const api = "https://www.mufenggame.com/wxJssdk/getJssdk";
-      const current_url = window.location.href;
+      const current_url = location.href;
 
       axios
         .post(api, {
@@ -101,6 +101,7 @@ export default {
     margin-top: 68vh;
     .enter-btn {
       width: 128px;
+      padding-right: 20px;
     }
   }
 }
