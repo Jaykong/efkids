@@ -163,8 +163,8 @@ export default {
 
     this.exceed = (84 + (15/26)*country_count + num).toFixed(2);
 
-    if((84 + (15/26)*country_count)>98) {
-      this.exceed = (98 + num).toFixed(2);
+    if((84 + (15/26)*country_count)>99) {
+      this.exceed = (99 + num).toFixed(2);
     }
 
     if(this.country_count===1 && this.current_country.includes("中国")) {
