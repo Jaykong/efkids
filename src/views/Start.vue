@@ -119,6 +119,7 @@ export default {
     margin-top: 68vh;
     .enter-btn {
       width: 128px;
+      padding-right: 20px;
     }
   }
 }
