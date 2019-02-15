@@ -325,7 +325,7 @@ export default {
       return pwd;
     },
     onStart() {
-      console.log("start");
+      // console.log("start");
       // 自定义事件上报
       MtaH5.clickStat("start", { query: "新年之旅" });
     }
