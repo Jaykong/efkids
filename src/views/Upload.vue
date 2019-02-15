@@ -84,7 +84,7 @@ export default {
     wx.ready(function() {
       wx.onMenuShareTimeline({
         title: "定制宝贝环球足迹", // 分享标题
-        link: "https://www.mufenggame.com/efkids2/?CKTAG=ef.share.momet", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "https://www.mufenggame.com/efkids2/?ADTAG=ef.share.momet", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
           // 用户点击了分享后执行的回调函数
@@ -95,7 +95,7 @@ export default {
       wx.onMenuShareAppMessage({
         title: "定制宝贝环球足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
-        link: "https://www.mufenggame.com/efkids2/?CKTAG=ef.share.msg", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "https://www.mufenggame.com/efkids2/?ADTAG=ef.share.msg", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         type: "", // 分享类型,music、video或link，不填默认为link
         dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空

@@ -8,7 +8,7 @@
 import MtaH5 from "mta-h5-analysis";
 
 export default {
-  created() {
+  mounted() {
     // 初始化
     MtaH5.init({
       sid: "500670641", //必填，统计用的appid
