@@ -5109,6 +5109,11 @@ ms@^2.1.1:
   resolved "http://registry.npm.taobao.org/ms/download/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha1-MKWGTrPrsKZvLr5tcnrwagnYbgo=
 
+mta-h5-analysis@^2.0.15:
+  version "2.0.15"
+  resolved "http://registry.npm.taobao.org/mta-h5-analysis/download/mta-h5-analysis-2.0.15.tgz#75db0f438aad890b0a07c7ebb4dfcdb35669a692"
+  integrity sha1-ddsPQ4qtiQsKB8frtN/Ns1ZpppI=
+
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/multicast-dns-service-types/download/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
