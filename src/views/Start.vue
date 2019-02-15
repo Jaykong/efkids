@@ -52,12 +52,12 @@ export default {
     wx.ready(function() {
       wx.onMenuShareTimeline({
         title: "定制宝贝环球足迹", // 分享标题
-        link: "https://www.mufenggame.com/efkids2/?ADTAG=ef.share.momet", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "https://www.mufenggame.com/efkids2/?CKTAG=mta_share.wechat_moments", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
           // 用户点击了分享后执行的回调函数
           // 用户确认分享后执行的回调函数
-          MtaH5.clickStat("wechat_moments");
+          MtaH5.clickShare('wechat_moments');
         }
       });
       wx.onMenuShareAppMessage({
