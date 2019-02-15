@@ -95,7 +95,7 @@
     >
       <van-col>
         <a href="https://jinshuju.net/f/9ZFULV">
-          <img class="start-btn" src="../assets/images/statNewTripBtn.png">
+          <img class="start-btn" @click="onStart" src="../assets/images/statNewTripBtn.png">
         </a>
       </van-col>
     </van-row>
@@ -110,6 +110,8 @@ import BadgeLoad from "../components/BadgeLoad";
 
 import axios from "axios";
 import sha1 from "js-sha1";
+
+import MtaH5 from "mta-h5-analysis";
 
 export default {
   data() {
@@ -204,6 +206,9 @@ export default {
     }
   },
   mounted() {
+    // 页面上报
+    MtaH5.pgv();
+
     /**
      * 绘制canvas
      */
@@ -248,7 +253,7 @@ export default {
         const timestamp = new Date().getTime();
         const url = window.location.href;
 
-        console.log(url);
+        // console.log(url);
 
         const string1 = `jsapi_ticket=${ticket}&noncestr=${noncestr}&timestamp=${timestamp}&url=${url}`;
         const signature = sha1(string1);
@@ -267,21 +272,25 @@ export default {
     wx.ready(function() {
       wx.onMenuShareTimeline({
         title: "定制宝贝环球足迹", // 分享标题
-        link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "https://www.mufenggame.com/?CKTAG=mta_share.wechat_moments", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         success: function() {
           // 用户点击了分享后执行的回调函数
+          // 用户确认分享后执行的回调函数
+          MtaH5.clickShare("wechat_moments");
         }
       });
       wx.onMenuShareAppMessage({
         title: "定制宝贝环球足迹", // 分享标题
         desc: "世界这么大，宝贝都去过哪些地方？", // 分享描述
-        link: "https://www.mufenggame.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        link: "https://www.mufenggame.com/?CKTAG=mta_share.wechat_message", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
         imgUrl: "https://www.mufenggame.com/loading/loading.png", // 分享图标
         type: "", // 分享类型,music、video或link，不填默认为link
         dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
         success: function() {
           // 用户点击了分享后执行的回调函数
+          // 用户确认分享后执行的回调函数
+          MtaH5.clickShare("wechat_message");
         }
       });
     });
@@ -314,6 +323,11 @@ export default {
         pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
       }
       return pwd;
+    },
+    onStart() {
+      console.log("start");
+      // 自定义事件上报
+      MtaH5.clickStat("start", { query: "新年之旅" });
     }
   }
 };
