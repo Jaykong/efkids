@@ -57,7 +57,7 @@ export default {
         success: function() {
           // 用户点击了分享后执行的回调函数
           // 用户确认分享后执行的回调函数
-          MtaH5.clickShare("wechat_moments");
+          MtaH5.clickStat("wechat_moments");
         }
       });
       wx.onMenuShareAppMessage({
@@ -70,7 +70,7 @@ export default {
         success: function() {
           // 用户点击了分享后执行的回调函数
           // 用户确认分享后执行的回调函数
-          MtaH5.clickShare("wechat_message");
+          MtaH5.clickStat("wechat_message");
         }
       });
     });
