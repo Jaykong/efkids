@@ -10,7 +10,15 @@ module.exports = {
       }
     }
   },
+
   devServer: {
     proxy: "https://www.mufenggame.com"
-  }
+  },
+
+  baseUrl: "/efkids2/",
+  outputDir: undefined,
+  assetsDir: undefined,
+  runtimeCompiler: undefined,
+  productionSourceMap: undefined,
+  parallel: undefined
 };

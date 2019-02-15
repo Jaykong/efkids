@@ -94,7 +94,7 @@
       justify="end"
     >
       <van-col>
-        <a href="https://jinshuju.net/f/9ZFULV">
+        <a href="https://jinshuju.net/f/8aCo5X">
           <img class="start-btn" src="../assets/images/statNewTripBtn.png">
         </a>
       </van-col>
